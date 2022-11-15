@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="300dp"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
     android:background="#2B353E"
     tools:context=".cameraSection.CautionFragment"
     android:orientation="vertical"
@@ -14,13 +14,14 @@
         android:paddingBottom="30dp"
         android:text="카메라 촬영 시 유의사항"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="35sp"
         android:fontFamily="@font/gmarket_sans_bold"
         android:layout_gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1. 본인 얼굴을 카메라와 일직선상에 있도록 배치하십시오"
+        android:textSize="20sp"
         android:paddingBottom="15dp"
         android:fontFamily="@font/gmarket_sans_medium"
         android:textColor="@color/white"/>
@@ -28,6 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:paddingBottom="15dp"
         android:text="2. 마스크를 벗은 채로 카메라 촬영을 진행해주십시오."
         android:fontFamily="@font/gmarket_sans_medium"
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="50dp"
         android:text="3. 표정은 자연스럽게 지어주십시오."
+        android:textSize="20sp"
         android:fontFamily="@font/gmarket_sans_medium"
         android:textColor="@color/white"/>
 
@@ -46,6 +49,7 @@
         android:id="@+id/btn_attention_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
         android:text="확인"
         android:fontFamily="@font/jua"/>
