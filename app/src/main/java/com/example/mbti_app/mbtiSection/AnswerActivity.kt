@@ -25,12 +25,14 @@ class AnswerActivity : AppCompatActivity() {
         viewBinding.button.setOnClickListener {
             val intent = Intent(this, RightResultActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         // 틀렸다 버튼
         viewBinding.button2.setOnClickListener {
             val intent = Intent(this, WrongResultActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

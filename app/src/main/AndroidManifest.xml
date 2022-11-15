@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mbti_app">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,22 +15,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mbti_app"
+
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="30">
 
         <activity
-            android:name=".mbtiSection.IntrovertActivity"
+            android:launchMode="singleInstance"
+            android:name=".logoSection.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:name=".cameraSection.CameraActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
 
-
         <activity
+            android:launchMode="singleTop"
+            android:name=".mbtiSection.IntrovertActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:launchMode="singleTop"
             android:name=".mbtiSection.ExtrovertActivity"
             android:exported="false">
             <meta-data
@@ -34,6 +55,7 @@
                 android:value="" />
         </activity>
         <activity
+            android:launchMode="singleTop"
             android:name=".mbtiSection.AnswerActivity"
             android:exported="false">
             <meta-data
@@ -41,6 +63,7 @@
                 android:value="" />
         </activity>
         <activity
+            android:launchMode="singleTop"
             android:name=".resultSection.FinalResultActivity"
             android:exported="false">
             <meta-data
@@ -48,6 +71,7 @@
                 android:value="" />
         </activity>
         <activity
+            android:launchMode="singleTop"
             android:name=".resultSection.WrongResultActivity"
             android:exported="false">
             <meta-data
@@ -55,6 +79,7 @@
                 android:value="" />
         </activity>
         <activity
+            android:launchMode="singleTop"
             android:name=".resultSection.RightResultActivity"
             android:exported="false">
             <meta-data
@@ -62,16 +87,15 @@
                 android:value="" />
         </activity>
 
-        <!-- main Activity 설정 -->
-<!--        <activity-->
-<!--            android:name=".logoSection.MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+        <provider
+            android:authorities="com.example.mbti_app.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+        </provider>
     </application>
 
 </manifest>

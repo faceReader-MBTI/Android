@@ -3,7 +3,9 @@ package com.example.mbti_app.resultSection
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mbti_app.cameraSection.CameraActivity
 import com.example.mbti_app.databinding.ResultFinalActivityBinding
+import com.example.mbti_app.logoSection.MainActivity
 import com.example.mbti_app.mbtiSection.IntrovertActivity
 
 
@@ -34,9 +36,10 @@ class FinalResultActivity : AppCompatActivity() {
             */
             var userMbti = viewBinding.editUserMbti.text.toString()
 
-            val intent = Intent(this, IntrovertActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("UserMbti", userMbti)
             startActivity(intent)
+            finish()
         }
 
     }

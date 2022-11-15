@@ -21,6 +21,7 @@ class ExtrovertActivity : AppCompatActivity() {
         viewBinding.btnNext.setOnClickListener {
             val intent = Intent(this, AnswerActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

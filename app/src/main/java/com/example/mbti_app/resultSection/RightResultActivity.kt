@@ -21,6 +21,7 @@ class RightResultActivity : AppCompatActivity() {
         viewBinding.btnNext.setOnClickListener {
             val intent = Intent(this, FinalResultActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

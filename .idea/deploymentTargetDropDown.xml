@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="$USER_HOME$/.android/avd/FaceReader_MBTI.avd" />
+            <value value="C:\Users\devel\.android\avd\Pixel_3_API_32.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-11-13T12:35:06.862009Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-11-15T13:57:29.716831200Z" />
   </component>
 </project>
