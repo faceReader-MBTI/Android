@@ -9,12 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.example.mbti_app.R
 
-class CautionFragment(onOKClickListener: OnCautionOKClickListener) : DialogFragment() {
-    private var callbackCameraActivity:OnCautionOKClickListener
-
-    init {
-        callbackCameraActivity = onOKClickListener
-    }
+class ErrMaskFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +20,8 @@ class CautionFragment(onOKClickListener: OnCautionOKClickListener) : DialogFragm
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragmentInflater = inflater.inflate(R.layout.fragment_caution, container, false)
-        fragmentInflater.findViewById<Button>(R.id.btn_attention_ok).setOnClickListener {
-            callbackCameraActivity.onOKClikListener()
+        val fragmentInflater = inflater.inflate(R.layout.fragment_err_mask, container, false)
+        fragmentInflater.findViewById<Button>(R.id.btn_err_mask).setOnClickListener {
             dismiss()
         }
         return fragmentInflater

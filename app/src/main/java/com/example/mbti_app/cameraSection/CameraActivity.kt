@@ -3,25 +3,19 @@ package com.example.mbti_app.cameraSection
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.ImageDecoder
-import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.example.mbti_app.R
 import java.io.File
-import java.io.FileOutputStream
-import java.io.OutputStream
 import java.text.SimpleDateFormat
-import java.util.jar.Manifest
 import kotlin.system.exitProcess
 
 class CameraActivity : AppCompatActivity(), OnCautionOKClickListener{
@@ -40,12 +34,26 @@ class CameraActivity : AppCompatActivity(), OnCautionOKClickListener{
         setContentView(R.layout.activity_camera)
         checkPermissions(PERMISSIONS, PERMISSIONS_REQUEST)
         val btnCamera = findViewById<Button>(R.id.btn_camera)
+        val btnAnalyze = findViewById<Button>(R.id.btn_analyze)
+
         imagePhoto = findViewById<ImageView>(R.id.image_camera)
 
         btnCamera.setOnClickListener {
             CautionFragment(this).show(
                 supportFragmentManager, "CameraDialog"
             )
+        }
+        btnAnalyze.setOnClickListener {
+            if(true){
+                ErrPersonFragment().show(
+                    supportFragmentManager, "ErrPersonDialog"
+                )
+            }
+            else{
+                ErrMaskFragment().show(
+                    supportFragmentManager, "ErrMaskDialog"
+                )
+            }
         }
     }
     fun CallCamera(){
