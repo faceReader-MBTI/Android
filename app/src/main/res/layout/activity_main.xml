@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".LogoSection.MainActivity">
+    tools:context=".logoSectoin.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView_logo"
+        android:id="@+id/image_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"/>
 
     <Button
-        android:id="@+id/button_start"
+        android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"/>

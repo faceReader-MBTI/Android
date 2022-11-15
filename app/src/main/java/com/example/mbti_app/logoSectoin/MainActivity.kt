@@ -1,11 +1,13 @@
-package com.example.mbti_app.LogoSection
+package com.example.mbti_app.logoSectoin
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 import com.example.mbti_app.R
-import java.util.jar.Manifest
+import com.example.mbti_app.cameraSection.CameraActivity
 
 class MainActivity : AppCompatActivity() {
     private val myCameraPermission = 100
@@ -14,6 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         onCheckPermission();
+        val startButton = findViewById<Button>(R.id.btn_start)
+        startButton.setOnClickListener {
+            val cameraIntent = Intent(this, CameraActivity::class.java)
+            startActivity(cameraIntent)
+        }
     }
     private fun onCheckPermission(){
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
